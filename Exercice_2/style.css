@@ -1,0 +1,150 @@
+body{
+    background-color: white;
+    color: black; 
+}
+
+h1 {
+    padding-left: 40px; 
+}
+
+.image{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+}
+
+.image img{
+    width: 559px;
+}
+
+.txt {
+    width: 50%;
+}
+
+article{
+    display: flex;
+    justify-content: center;
+    gap:30px; 
+}
+
+figcaption{
+    visibility: hidden;
+}
+
+footer {
+    display: flex;
+    justify-content: start;
+}
+
+footer button {
+    background-color:black;
+    color:white; 
+    border:none; 
+    width: 200px;
+    height: 50px;
+    font-size: 1em;
+    border-radius: 50px;
+}
+
+.size {
+    width: 100%;
+    padding: 20px;
+}
+
+.size a {
+    text-decoration: none;
+    color: RGB(255, 255, 255);
+    text-decoration: underline;
+}
+
+.size a:hover {
+    color: RGB(0, 204, 255);
+}
+
+.product_size {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    list-style-type: none;
+    padding: 0;
+    justify-content: flex-start; 
+}
+
+input[type="radio"] {
+    display: none; 
+}
+
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+
+input[type="radio"]:checked + label {
+    border-color: black; 
+    background-color: #fff;
+    color: RGB(44, 47, 59);
+}
+
+
+input[type="radio"]:disabled + label {
+    background-color: #f0f0f0;
+    color: #ccc;
+    border-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+#price {
+    font-size: 1.3em;
+}
+
+@media (max-width: 768px) {
+    h1{
+        padding:0; 
+    }
+    article{
+        flex-direction: column;
+        padding:0;
+    }
+
+    .txt {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        padding:0; 
+    }
+
+    .image img {
+        width: 279px;
+        padding-left: 20px;
+    }
+
+    .size {
+        width: 100%;
+        padding:0; 
+        margin: 0; 
+        padding-left:30px; 
+    }
+
+    #price {
+        font-size: 1.3em;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        padding-top:20px; 
+    }
+
+
+
+}

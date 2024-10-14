@@ -1,20 +1,19 @@
 import "./productCard.css";
-export function ProductCard() 
-{
+
+export function ProductCard({ image, name, description, price }) {
     return (
-        
         <article>
-            <div class="container">
+            <div className="container">
                 <div className="image">
                     <figure>
-                        <img src="NIKE+DUNK+LOW.png" alt="Dunk low 2" />
-                        <figcaption>Nike dunk low</figcaption>
+                        <img src={image} alt={name} />
+                        <figcaption>{name}</figcaption>
                     </figure>
                 </div>
                 <div className="txt">
-                    <h2>Nike Dunk Low</h2>
+                    <h2>{description}</h2>
                     <section>
-                        <p id="price">Price: €130</p>
+                        <p id="price">Price: {price}€</p>
                     </section>
                 </div>
                 <footer>
@@ -24,3 +23,5 @@ export function ProductCard()
         </article>
     );
 }
+
+export default ProductCard;

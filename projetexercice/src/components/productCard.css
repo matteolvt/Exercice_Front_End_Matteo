@@ -1,106 +1,76 @@
-/* Styles de base (desktop par défaut) */
+/* CSS pour centrer les cartes produits, les images, et définir le bouton en bleu */
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
-    background-color: #f5f5f5;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
-    box-sizing: border-box; /* Inclut padding et bordure dans la largeur totale */
-}
-
-/* Applique box-sizing à tous les éléments */
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-article {
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .container {
-    padding: 16px;
-}
-
-.image {
-    text-align: center;
-    margin-bottom: 16px;
-}
-
-.image img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
+    border: 1px solid #ddd;
     border-radius: 8px;
-}
-
-.image figcaption {
-    display: none; /* Cache le figcaption */
-}
-
-.txt {
+    padding: 10px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin-bottom: 16px;
 }
 
-.txt h2 {
-    font-size: 1.2rem;
-    margin: 0;
-    color: #333;
+.container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-#price {
-    font-size: 1rem;
-    color: #888;
-    margin-top: 8px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 16px;
-}
-
-footer button {
-    background-color: #007BFF;
+.container button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: darkblue;
     color: white;
     border: none;
-    padding: 10px 16px;
-    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+    border-radius: 5px;
+  }
+  
+  .container button:hover {
+    background-color: blue; /* Reste bleu au survol */
+  }
+  
 
-footer button:hover {
-    background-color: #0056b3;
-}
-
-/* Version mobile */
-@media (max-width: 600px) {
-    body {
-        padding: 20px; /* Ajoute un peu de padding autour de la carte */
+/* Styles pour la version mobile */
+@media (max-width: 768px) {
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
-    article {
-        width: 100%; /* La carte occupe toute la largeur de l'écran */
-        max-width: 400px; /* Limite la taille maximale sur mobile */
+  
+    .container {
+      width: 90%; /* Réduit la taille des cartes à 90% de la largeur de l'écran */
+      max-width: 300px;
+      margin: 10px auto; /* Centrer les cartes */
     }
-
-    .txt h2 {
-        font-size: 1rem; /* Réduit un peu la taille du texte */
+  
+    .container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
-
-    footer button {
-        width: 100%; /* Le bouton prend toute la largeur de la carte */
-        padding: 12px;
-        font-size: 1rem; /* Ajuste la taille du texte du bouton */
-    }
-}
+  }

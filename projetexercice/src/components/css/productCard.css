@@ -1,5 +1,3 @@
-/* CSS pour centrer les cartes produits, les images, et définir le bouton en bleu */
-
 body {
     display: flex;
     justify-content: center;
@@ -28,6 +26,7 @@ body {
     width: 90%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    margin-bottom:50px; 
 }
 
 .container img {
@@ -49,11 +48,11 @@ body {
   }
   
   .container button:hover {
-    background-color: blue; /* Reste bleu au survol */
+    background-color: blue; 
   }
   
 
-/* Styles pour la version mobile */
+
 @media (max-width: 768px) {
     .product-list {
       display: flex;
@@ -62,9 +61,9 @@ body {
     }
   
     .container {
-      width: 90%; /* Réduit la taille des cartes à 90% de la largeur de l'écran */
+      width: 90%; 
       max-width: 300px;
-      margin: 10px auto; /* Centrer les cartes */
+      margin: 10px auto;
     }
   
     .container img {

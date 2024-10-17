@@ -1,6 +1,6 @@
-import "./productCard.css";
+import "./css/productCard.css";
 
-export function ProductCard({ image, name, description, price }) {
+export function ProductCard({ image, name, description, price, addToCart }) { 
     return (
         <article>
             <div className="container">
@@ -17,7 +17,7 @@ export function ProductCard({ image, name, description, price }) {
                     </section>
                 </div>
                 <footer>
-                    <button type="button">Add to cart</button>
+                    <button type="button" onClick={() => addToCart({ id: Math.random(), name, price, image })}>Add to cart</button>
                 </footer>
             </div>
         </article>

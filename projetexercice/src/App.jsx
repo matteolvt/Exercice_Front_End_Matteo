@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import { ProductCard } from './components/productCard';
+import Header from './components/header';
+import ShoppingCart from './components/shoppingCart';
 
 export function App() {
+  const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false); 
+
   const products = [
     {
       id: 1,
@@ -35,19 +38,48 @@ export function App() {
     },
   ];
 
-  console.log(products);
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]); 
+  };
+
+  const removeFromCart = (id) => {
   
+    setCartItems(cartItems.filter(item => item.id !== id));
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen); 
+  };
+
   return (
-    <div className="product-list">
-      {products.map(product => (
-        <ProductCard
-          key={product.id}
-          image={product.image}
-          name={product.name}
-          description={product.description}
-          price={product.price}
+    <div>
+      <Header onCartToggle={toggleCart} /> 
+      <div className="product-list">
+        {products.map(product => (
+          <ProductCard
+            key={product.id}
+            image={product.image}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            addToCart={addToCart} 
+          />
+        ))}
+      </div>
+      {isCartOpen && ( 
+        <ShoppingCart 
+          cartItems={cartItems} 
+          clearCart={clearCart} 
+          removeFromCart={removeFromCart} 
+          onClose={toggleCart} 
         />
-      ))}
+      )}
     </div>
   ); 
 }
+
+export default App;
